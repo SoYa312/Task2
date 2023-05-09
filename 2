@@ -1,0 +1,16 @@
+def multiply(a, b):
+    if a < 0 or b < 0:
+        raise ValueError("Both numbers must be natural numbers.")
+    elif b == 0:
+        return 0
+    elif b > 0:
+        return a + multiply(a, b - 1)
+    else:
+        return -multiply(a, -b)
+
+
+try:
+    result = multiply(-4, -3)
+    print("Result of multiplying:", result)
+except ValueError as e:
+    print(str(e))
