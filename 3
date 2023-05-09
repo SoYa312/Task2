@@ -1,0 +1,18 @@
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Division by zero is not allowed.")
+    elif a < 0 or b < 0:
+        raise ValueError("Both numbers must be natural numbers.")
+    elif a < b:
+        return 0, a
+    else:
+        quotient, remainder = divide(a - b, b)
+        return quotient + 1, remainder
+
+
+try:
+    quotient, remainder = divide(9, 5)
+    print("Quotient:", quotient)
+    print("Remainder:", remainder)
+except (ValueError, ZeroDivisionError) as e:
+    print(str(e))
