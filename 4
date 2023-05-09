@@ -1,0 +1,24 @@
+def calculate_matrix_properties(matrix):
+    flattened_matrix = [element for row in matrix for element in row]
+    odd_elements = [element for index, element in enumerate(flattened_matrix) if index % 2 != 0]
+    odd_sum = sum(odd_elements)
+    diagonal_product = 1
+
+    for i in range(len(matrix)):
+        diagonal_product *= matrix[i][i]
+
+    average = sum(flattened_matrix) / len(flattened_matrix)
+
+    return flattened_matrix, average, odd_sum, diagonal_product
+
+
+matrix = [[1, 4, 7],
+          [21, 19, 5],
+          [6, 11, 9]]
+
+flattened_matrix, average, odd_sum, diagonal_product = calculate_matrix_properties(matrix)
+
+print("Flattened matrix:", flattened_matrix)
+print("Average:", average)
+print("Sum of odd elements:", odd_sum)
+print("Product of diagonal elements:", diagonal_product)
