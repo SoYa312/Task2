@@ -1,0 +1,22 @@
+def fact(n):
+    abs(n)
+    if n in (0, 1):
+        return 1
+    else:
+        return n * fact(n - 1)
+
+
+def calculate_series_sum(n, N):
+    s = 0  # series sum
+    m = 0  # iteration counter
+    for x in range(n, N + 1):
+        x = ((3 ** n) * fact(n)) / (n ** n)
+        m += 1
+        n += 1
+        s += x
+
+    print("The number of iterations:", m)
+    print("The sum of the series is:", s)
+
+
+calculate_series_sum(1, 6)
