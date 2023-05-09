@@ -1,0 +1,23 @@
+def find_gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+
+def is_integer(value):
+    return value.isdigit()
+
+
+num1 = input("enter first integer: ")
+while not is_integer(num1):
+    num1 = input("you must enter an integer: ")
+
+num2 = input("enter second integer: ")
+while not is_integer(num2):
+    num2 = input("you must enter an integer: ")
+
+num1 = int(num1)
+num2 = int(num2)
+
+gcd = find_gcd(num1, num2)
+print("Greatest common divisor:", gcd)
